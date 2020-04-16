@@ -1,0 +1,23 @@
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <label for="amount">Withdraw amount</label>
+      <input
+        type="text"
+        class="form-control"
+        id="amount"
+        required
+        [(ngModel)]="amount"
+        name="amount"
+      />
+    </div>
+
+
+    <button (click)="updateBalance(amount)" class="btn btn-success">Submit</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+    <button (click)="goBack()" class="btn btn-success">Go Back</button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="submit-form">
+  <div *ngIf="!submitted">
+    <div class="form-group">
+      <label for="nickname">Nickname</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nickname"
+        required
+        [(ngModel)]="account.nickname"
+        name="nickname"
+      />
+    </div>
+
+
+    <button (click)="saveAccount()" class="btn btn-success">Submit</button>
+  </div>
+
+  <div *ngIf="submitted">
+    <h4>You submitted successfully!</h4>
+
+  </div>
+</div>

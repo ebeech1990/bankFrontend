@@ -1,0 +1,68 @@
+<div class="list row">
+  <div class="col-md-8">
+    <div class="input-group mb-3">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search by nickname"
+        [(ngModel)]="nickname"
+      />
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="searchNickname()"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Accounts List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let account of accounts; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveAccount(account, i)"
+      >
+        {{ account.nickname }}
+      </li>
+    </ul>
+    <button class="m-3 btn btn-sm btn-danger" (click)="removeAllAccounts()">
+      Remove All
+    </button>
+
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentAccount">
+      <h4>Account</h4>
+      <div>
+        <label><strong>Id:</strong></label>
+        {{ currentAccount.id }}
+      </div>
+      <div>
+        <label><strong>Nickname:</strong></label> {{ currentAccount.nickname }}
+      </div>
+      <div>
+        <label><strong>Balance:</strong></label>
+        {{ currentAccount.balance }}
+      </div>
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentAccount.status ? "Active" : "Inactive" }}
+      </div>
+      <a class="badge badge-warning" href="/accounts/{{ currentAccount.id }}">
+        Edit
+      </a>
+
+    </div>
+
+    <div *ngIf="!currentAccount">
+      <br />
+      <p>Please click on an Account to view its details</p>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,69 @@
+<div *ngIf="currentAccount" class="edit-form">
+  <h4>Account</h4>
+  <form>
+    <div>
+      <label><strong>Id:</strong></label>
+      {{ currentAccount.id }}
+    </div>
+    <div class="form-group">
+      <label for="nickname">Nickname</label>
+      <input
+        type="text"
+        class="form-control"
+        id="nickname"
+        [(ngModel)]="currentAccount.nickname"
+        name="nickname"
+      />
+    </div>
+    <div>
+      <label><strong>Balance:</strong></label>
+      {{ currentAccount.balance }}
+    </div>
+    <div class="form-group">
+      <label><strong>Status:</strong></label>
+      {{ currentAccount.status ? "Active" : "Inactive" }}
+    </div>
+  </form>
+<div>
+  <button
+    class="badge badge-primary mr-2"
+    *ngIf="currentAccount.status"
+    (click)="updateStatus(false)"
+  >
+    Deactivate
+  </button>
+  <button
+    *ngIf="!currentAccount.status"
+    class="badge badge-primary mr-2"
+    (click)="updateStatus(true)"
+  >
+    Activate
+  </button>
+  </div>
+  <div>
+  <a class="badge badge-warning" href="/accounts/{{ currentAccount.id }}/transactions">
+    Transactions
+  </a>
+  </div>
+  <div>
+  <a class="badge badge-info" href="/accounts/{{ currentAccount.id }}/deposit">
+    Deposit
+  </a>
+  <a class="badge badge-info" href="/accounts/{{ currentAccount.id }}/withdraw">
+    Withdraw
+  </a>
+
+  </div>
+  <button type="submit" class="badge badge-success" (click)="updateAccount()">
+    Update
+  </button>
+  <button class="badge badge-danger mr-2" (click)="deleteAccount()">
+    Delete
+  </button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentAccount">
+  <br />
+  <p>Cannot access this Account...</p>
+</div>

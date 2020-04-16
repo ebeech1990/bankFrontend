@@ -1,0 +1,42 @@
+
+  <div class="col-md-6">
+    <h4>transactions</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let transaction of transactions; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTransaction(transaction, i)"
+      >
+        {{ transaction.transactionId }}
+      </li>
+    </ul>
+
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentTransaction">
+
+      <div>
+        <label><strong>Id:</strong></label>
+        {{ currentTransaction.transactionId }}
+      </div>
+      <div>
+        <label><strong>Type:</strong></label> {{ currentTransaction.type }}
+      </div>
+      <div>
+        <label><strong>Date:</strong></label>
+        {{ currentTransaction.date }}
+      </div>
+      <div>
+        <label><strong>Amount:</strong></label>
+        {{ currentTransaction.transactionBalance }}
+      </div>
+
+    </div>
+
+    <div *ngIf="!currentTransaction">
+      <br />
+      <p>Please click on a transaction to view its details</p>
+    </div>
+<button (click)="goBack()" class="btn btn-success">Go Back</button>
+</div>
