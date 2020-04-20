@@ -12,6 +12,7 @@ import { DepositComponent } from './components/deposit/deposit.component';
 import { TransactionDetailsComponent } from './components/transaction-details/transaction-details.component';
 import { TransferComponent } from './components/transfer/transfer.component';
 import { WithdrawalComponent } from './components/withdrawal/withdrawal.component';
+import { AuthRoutingModule } from './auth-routing.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { WithdrawalComponent } from './components/withdrawal/withdrawal.componen
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
