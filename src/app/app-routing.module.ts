@@ -11,7 +11,7 @@ import { TransferComponent } from './components/transfer/transfer.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'accounts', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'accounts', component: AccountListComponent },
   { path: 'accounts/:id', component: AccountDetailsComponent },
   { path: 'add', component: AddAccountComponent },

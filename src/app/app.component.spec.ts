@@ -7,7 +7,7 @@ describe('AppComponent', () => {
   const oktaConfig = {
     issuer: 'https://not-real.okta.com',
     clientId: 'fake-client-id',
-    redirectUri: 'http://localhost:4200'
+    redirectUri: 'http://localhost:4200/'
   };
 
   beforeEach(async(() => {
