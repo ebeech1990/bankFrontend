@@ -23,6 +23,8 @@
     "@angular/platform-browser-dynamic": "~9.1.0",
     "@angular/router": "~9.1.0",
     "@ng-bootstrap/ng-bootstrap": "^6.0.2",
+    "@okta/okta-angular": "2.0.0",
+    "@oktadev/schematics": "^2.0.2",
     "express": "^4.17.1",
     "path": "^0.12.7",
     "rxjs": "~6.5.4",
