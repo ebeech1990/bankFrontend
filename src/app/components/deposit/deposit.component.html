@@ -14,13 +14,14 @@
               <label>Amount to deposit</label>
               <input type="number" class="form-control" formControlName="depositAmount">
               <span class="text-danger"
-                    *ngIf="(depositFormControl.depositAmount.touched || submitted) && depositForm.get('depositAmount').hasError('invalidNumber')">
-                                numbers only
-                            </span>
-              <span class="text-danger"
                     *ngIf="(depositFormControl.depositAmount.touched || submitted) && depositFormControl.depositAmount.errors.required">
                                 amount is required
                             </span>
+              <span class="text-danger"
+                    *ngIf="(depositFormControl.depositAmount.touched || submitted) && depositForm.get('depositAmount').hasError('invalidNumber')">
+                                numbers only
+                            </span>
+
               <span class="text-danger"
                     *ngIf="(depositFormControl.depositAmount.touched || submitted) && depositFormControl.depositAmount.errors.min">
                                 amount too small

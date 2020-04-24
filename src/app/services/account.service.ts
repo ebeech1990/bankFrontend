@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-const baseUrl = 'http://localhost:8080/accounts';
+//const baseUrl = 'http://localhost:8080/accounts';
+const baseUrl = 'https://evening-plateau-59541.herokuapp.com/accounts';
 
 @Injectable({
   providedIn: 'root'
